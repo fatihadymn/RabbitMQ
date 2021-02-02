@@ -1,0 +1,66 @@
+version: "3.5"
+
+services:
+
+  ##41021
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbitmq"
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "test"
+      RABBITMQ_DEFAULT_PASS: "test"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "41021:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    networks: 
+      - rabbitmqexample
+
+  ##41120 - consumer
+  consumer:
+    image: rabbitmq/consumer
+    build:
+      context: ./src/RabbitMQ.Consumer
+      dockerfile: ./Dockerfile
+    container_name: consumer
+    ports:
+      - '41120:80'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    networks:
+      - rabbitmqexample
+    depends_on:
+      - rabbitmq
+    restart: 
+      on-failure
+
+  ##41121 - producer
+  producer:
+    image: rabbitmq/producer
+    build:
+      context: ./src/RabbitMQ.Producer
+      dockerfile: ./Dockerfile
+    container_name: producer
+    ports:
+      - '41121:80'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    networks:
+      - rabbitmqexample
+    depends_on:
+      - rabbitmq
+    restart: 
+      on-failure
+
+networks:
+  rabbitmqexample:
+    name: rabbitmqexample
+
+volumes:
+  db_volume:
+  pg_volume:
+
