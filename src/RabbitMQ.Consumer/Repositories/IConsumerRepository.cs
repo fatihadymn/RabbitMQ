@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RabbitMQ.App.Repositories
+namespace RabbitMQ.Consumer.Repositories
 {
     public interface IConsumerRepository
     {

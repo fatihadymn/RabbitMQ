@@ -7,7 +7,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["RabbitMQ.Consumer.csproj", ""]
-RUN dotnet restore "./RabbitMQ.Consumer.csproj"
+RUN dotnet restore "RabbitMQ.Consumer.csproj"
 
 COPY . .
 WORKDIR "/src/."

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RabbitMQ.App.Repositories;
+using RabbitMQ.Producer.Repositories;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Producer.Controllers
@@ -10,9 +10,9 @@ namespace RabbitMQ.Producer.Controllers
     {
         private readonly ProducerRepository producer;
 
-        public ProducerController()
+        public ProducerController(ProducerRepository producer)
         {
-            producer = new ProducerRepository();
+            this.producer = producer;
         }
 
         [HttpPost]

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using RabbitMQ.App.Repositories;
+using RabbitMQ.Producer.Repositories;
 
 namespace RabbitMQ.Producer
 {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace RabbitMQ.App.Repositories
+namespace RabbitMQ.Producer.Repositories
 {
     public interface IProducerRepository
     {

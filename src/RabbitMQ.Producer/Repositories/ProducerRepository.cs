@@ -3,7 +3,7 @@ using RabbitMQ.Common;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RabbitMQ.App.Repositories
+namespace RabbitMQ.Producer.Repositories
 {
     public class ProducerRepository:IProducerRepository
     {

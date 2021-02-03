@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using RabbitMQ.App.Repositories;
+using RabbitMQ.Consumer.Repositories;
 
 namespace RabbitMQ.Consumer
 {

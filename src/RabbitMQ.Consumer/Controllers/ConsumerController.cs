@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RabbitMQ.App.Repositories;
+using RabbitMQ.Consumer.Repositories;
 using System.Threading.Tasks;
 
 namespace RabbitMQ.Consumer.Controllers
@@ -10,9 +10,9 @@ namespace RabbitMQ.Consumer.Controllers
     {
         private readonly ConsumerRepository consumer;
 
-        public ConsumerController()
+        public ConsumerController(ConsumerRepository consumer)
         {
-            consumer = new ConsumerRepository();
+            this.consumer = consumer;
         }
 
         [HttpGet]
