@@ -9,7 +9,7 @@ Docker Desktop is required to use Dockerize solutions. Also If you are using Doc
 * Download [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 ## Usage
-First in terminal just go to docker-compose.yml file path and write this code below.
+First in terminal just go to docker-compose.yml file path and write this below code.
 
 ```bash
 $ docker-compose up --build -d
@@ -18,3 +18,9 @@ Then three container will create on Docker.
 * Consumer
 * Producer
 * RabbitMQ
+
+Finally, if you want to remove all containers on Docker, use this below code
+
+```bash
+$ docker-compose down
+```
